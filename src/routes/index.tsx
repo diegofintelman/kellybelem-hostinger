@@ -1,38 +1,34 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import kellyImg from "@/assets/kelly.jpg";
+import kellyAward1 from "@/assets/kelly-award-1.jpg";
+import kellyAward2 from "@/assets/kelly-award-2.jpg";
+import kellyTestimonialsBg from "@/assets/kelly-testimonials-bg.jpg";
 import heroFacade from "@/assets/hero-facade.webp";
 import c1 from "@/assets/cottage-1.webp";
 import c1a from "@/assets/cottage1-a.jpg";
-import c1b from "@/assets/cottage1-b.jpg";
-import c1c from "@/assets/cottage1-c.jpg";
-import c1d from "@/assets/cottage1-d.jpg";
-import c1e from "@/assets/cottage1-e.jpg";
 import c2 from "@/assets/cottage-2.webp";
 import c2a from "@/assets/cottage2-a.jpg";
 import c2b from "@/assets/cottage2-b.jpg";
 import c2c from "@/assets/cottage2-c.jpg";
 import c2d from "@/assets/cottage2-d.jpg";
-import c2e from "@/assets/cottage2-e.jpg";
-import c2f from "@/assets/cottage2-f.jpg";
-import c2g from "@/assets/cottage2-g.jpg";
 import c3 from "@/assets/cottage-3.webp";
 import c3a from "@/assets/cottage3-a.jpg";
 import c3b from "@/assets/cottage3-b.jpg";
 import c3c from "@/assets/cottage3-c.jpg";
 import c3d from "@/assets/cottage3-d.jpg";
-import c3e from "@/assets/cottage3-e.jpg";
-import c3f from "@/assets/cottage3-f.jpg";
-import c3g from "@/assets/cottage3-g.jpg";
 import c4 from "@/assets/cottage-4.webp";
 import c4a from "@/assets/cottage4-a.jpg";
 import c4b from "@/assets/cottage4-b.jpg";
 import c4c from "@/assets/cottage4-c.jpg";
 import c4d from "@/assets/cottage4-d.jpg";
-import c4e from "@/assets/cottage4-e.jpg";
-import c4f from "@/assets/cottage4-f.jpg";
 import bungalow from "@/assets/bungalow.webp";
 import ruina from "@/assets/ruina.webp";
+import c5a from "@/assets/cottage5-a.jpg";
+import c5b from "@/assets/cottage5-b.jpg";
+import c5c from "@/assets/cottage5-c.jpg";
+import c5d from "@/assets/cottage5-d.jpg";
+import c5e from "@/assets/cottage5-e.jpg";
 import rA from "@/assets/ruina-a.jpg";
 import rB from "@/assets/ruina-b.jpg";
 import rC from "@/assets/ruina-c.jpg";
@@ -66,13 +62,14 @@ export const Route = createFileRoute("/")({
 });
 
 const COTTAGE_IMAGES: Record<string, string> = {
-  madrid: heroFacade, c1, c2, c3, c4, bungalow, ruina,
+  madrid: heroFacade, c1, c2, c3, c4, c5: c5a, bungalow, ruina,
 };
 const COTTAGE_GALLERIES: Record<string, string[]> = {
-  c1: [c1a, c1b, c1c, c1d, c1e],
-  c2: [c2a, c2b, c2c, c2d, c2e, c2f, c2g],
-  c3: [c3a, c3b, c3c, c3d, c3e, c3f, c3g],
-  c4: [c4a, c4b, c4c, c4d, c4e, c4f],
+  c1: [c1a],
+  c2: [c2a, c2b, c2c, c2d],
+  c3: [c3a, c3b, c3c, c3d],
+  c4: [c4a, c4b, c4c, c4d],
+  c5: [c5a, c5b, c5c, c5d, c5e],
   ruina: [ruina, rA, rB, rC, rD, rE, rF, rG, rH, rI, rJ],
 };
 
@@ -94,7 +91,7 @@ function Index() {
       <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm bg-background/20 border-b border-border/30">
         <div className="max-w-[1400px] mx-auto px-4 md:px-12 py-1 md:py-1.5 flex items-center justify-between gap-3">
           <a href="#top" className="font-display text-[0.6rem] md:text-xs tracking-[0.2em] md:tracking-[0.25em] uppercase leading-tight max-w-[55%] md:max-w-none">The Coral Rock Village</a>
-          <nav className="hidden md:flex gap-8 text-[0.65rem] uppercase tracking-[0.22em] text-muted-foreground">
+          <nav className="hidden md:flex gap-8 text-[0.65rem] uppercase tracking-[0.22em] text-foreground">
             <a href="#historia" className="hover:text-terracotta transition">{t.nav.history}</a>
             <a href="#propriedade" className="hover:text-terracotta transition">{t.nav.property}</a>
             <a href="#investimento" className="hover:text-terracotta transition">{t.nav.investment}</a>
@@ -173,16 +170,12 @@ function Index() {
             <h2 className="mt-6 text-4xl md:text-5xl leading-[1.05]">
               {t.history.h2a}<br />{t.history.h2b}<br />{t.history.h2c}
             </h2>
-            <p className="font-italic-serif text-2xl text-terracotta mt-4">
-              {t.history.sub}
-            </p>
           </div>
           <div className="md:col-span-7 md:col-start-6 space-y-6 text-[1.05rem] leading-[1.8] text-foreground/85">
             <p className="first-letter:font-display first-letter:text-7xl first-letter:float-left first-letter:mr-3 first-letter:leading-[0.85] first-letter:text-terracotta">
               {t.history.p1}
             </p>
             <p>{t.history.p2}</p>
-            <p>{t.history.p3} <em className="font-italic-serif">{t.history.p3b}</em> {t.history.p3c}</p>
           </div>
         </div>
       </section>
@@ -199,30 +192,27 @@ function Index() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-x-10 gap-y-20">
-            {t.cottages.map((c, i) => {
-              const isWide = c.id === "ruina";
-              return (
-                <article
-                  key={c.id}
-                  className={`group ${isWide ? "md:col-span-2 md:grid md:grid-cols-2 md:gap-10 md:items-center" : ""} ${!isWide && i % 2 === 1 ? "md:mt-24" : ""}`}
-                >
-                  {COTTAGE_GALLERIES[c.id] ? (
-                    <CottageCarousel images={COTTAGE_GALLERIES[c.id]} alt={c.name} />
-                  ) : (
-                    <div className="overflow-hidden bg-sand-dark aspect-[4/5]">
-                      <img src={COTTAGE_IMAGES[c.id]} alt={c.name} className="w-full h-full object-cover transition duration-700 group-hover:scale-[1.04]" loading="lazy" decoding="async" />
-                    </div>
-                  )}
-                  <div className={isWide ? "md:pl-4" : ""}>
-                    <div className="mt-6 md:mt-0 flex items-baseline justify-between gap-4 border-b border-foreground/15 pb-3">
-                      <h3 className="font-display text-2xl md:text-3xl">{c.name}</h3>
-                      <span className="eyebrow text-foreground/60">{c.meta}</span>
-                    </div>
-                    <p className="mt-4 text-[0.98rem] leading-[1.75] text-foreground/80 font-serif text-lg">{c.body}</p>
+            {t.cottages.map((c, i) => (
+              <article
+                key={c.id}
+                className={`group ${i % 2 === 1 ? "md:mt-24" : ""}`}
+              >
+                {COTTAGE_GALLERIES[c.id] ? (
+                  <CottageCarousel images={COTTAGE_GALLERIES[c.id]} alt={c.name} />
+                ) : (
+                  <div className="overflow-hidden bg-sand-dark aspect-[4/5]">
+                    <img src={COTTAGE_IMAGES[c.id]} alt={c.name} className="w-full h-full object-cover transition duration-700 group-hover:scale-[1.04]" loading="lazy" decoding="async" />
                   </div>
-                </article>
-              );
-            })}
+                )}
+                <div>
+                  <div className="mt-6 flex items-baseline justify-between gap-4 border-b border-foreground/15 pb-3">
+                    <h3 className="font-display text-2xl md:text-3xl">{c.name}</h3>
+                    <span className="eyebrow text-foreground/60">{c.meta}</span>
+                  </div>
+                  <p className="mt-4 text-[0.98rem] leading-[1.75] text-foreground/80 font-serif text-lg">{c.body}</p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -242,51 +232,41 @@ function Index() {
               "linear-gradient(to right, var(--ink) 0%, var(--ink) 35%, color-mix(in oklab, var(--ink) 75%, transparent) 70%, color-mix(in oklab, var(--ink) 60%, transparent) 100%)",
           }}
         />
-        <div className="relative max-w-[1400px] mx-auto px-6 md:px-12">
-          <div className="grid md:grid-cols-12 gap-10 mb-16">
-            <div className="md:col-span-6">
-              <p className="eyebrow text-gold"><span className="rule" />{t.tax.eyebrow}</p>
-              <h2 className="mt-6 text-4xl md:text-5xl leading-[1.05] text-sand-light">
-                {t.tax.h2a}<br />{t.tax.h2b}
-              </h2>
-              <p className="font-italic-serif text-2xl text-gold mt-4">{t.tax.sub}</p>
-            </div>
+        <div className="relative max-w-[1100px] mx-auto px-6 md:px-12">
+          <div className="mb-10 md:mb-14">
+            <p className="eyebrow text-gold"><span className="rule" />{t.tax.eyebrow}</p>
+            <h2 className="mt-6 text-3xl md:text-5xl leading-[1.05] text-sand-light">
+              {t.tax.h2a}<br />{t.tax.h2b}
+            </h2>
+            <p className="font-italic-serif text-xl md:text-2xl text-gold mt-4">{t.tax.sub}</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-x-16 gap-y-10">
-            {t.tax.items.map(([title, body], i) => (
-              <div key={title} className="flex gap-6 border-t border-sand-light/15 pt-6">
-                <span className="font-display text-gold text-xl">0{i + 1}</span>
-                <div>
-                  <h4 className="font-display text-xl text-sand-light tracking-wide">{title}</h4>
-                  <p className="mt-3 text-sand/70 leading-relaxed text-[0.95rem]">{body}</p>
-                </div>
-              </div>
+          <div className="space-y-5 text-sand/85 leading-[1.85] text-[0.98rem] md:text-[1.05rem] max-w-3xl">
+            {t.tax.body.split("\n\n").map((para, i) => (
+              <p key={i}>{para}</p>
             ))}
           </div>
-          <p className="mt-16 text-[0.7rem] text-sand/40 max-w-3xl leading-relaxed">{t.tax.disclaimer}</p>
+          <div className="mt-12 max-w-3xl crystal-glass crystal-glass--dark p-5 md:p-7">
+            <p className="text-[0.77rem] md:text-[0.77rem] text-sand/75 leading-relaxed">{t.tax.disclaimer}</p>
+          </div>
         </div>
       </section>
 
       {/* INVESTMENT */}
       <section id="investimento" className="py-16 md:py-32 bg-sand-light">
-        <div className="max-w-[1400px] mx-auto px-5 md:px-12 grid md:grid-cols-12 gap-8 md:gap-12">
-          <div className="md:col-span-5">
+        <div className="max-w-[1100px] mx-auto px-5 md:px-12">
+          <div className="mb-8 md:mb-12">
             <p className="eyebrow">{t.invest.eyebrow}</p>
             <h2 className="mt-4 md:mt-6 text-3xl md:text-5xl leading-[1.1]">
-              {t.invest.h2a}<br />{t.invest.h2b}
+              <span className="font-italic-serif text-terracotta">{t.invest.h2a}</span> {t.invest.h2b}
             </h2>
-            <p className="font-italic-serif text-xl md:text-2xl text-terracotta mt-3 md:mt-4">{t.invest.sub}</p>
-            <p className="mt-5 md:mt-6 text-foreground/75 leading-relaxed text-[0.95rem] md:text-base">{t.invest.p}</p>
           </div>
-          <div className="md:col-span-6 md:col-start-7">
-            <dl className="divide-y divide-foreground/15 border-y border-foreground/15">
-              {t.invest.rows.map(([k, v], i) => (
-                <div key={k} className="flex justify-between items-baseline gap-4 py-4 md:py-5">
-                  <dt className="text-[0.7rem] md:text-sm uppercase tracking-[0.18em] text-foreground/60 shrink-0">{k}</dt>
-                  <dd className={`font-display text-right ${i === 2 ? "text-terracotta text-2xl md:text-3xl" : "text-xl md:text-2xl"}`}>{v}</dd>
-                </div>
-              ))}
-            </dl>
+          <div className="space-y-5 text-foreground/80 leading-[1.85] text-[0.98rem] md:text-[1.05rem] max-w-3xl">
+            {t.invest.body.split("\n\n").map((para, i) => (
+              <p key={i}>{para}</p>
+            ))}
+          </div>
+          <div className="mt-12 max-w-3xl crystal-glass crystal-glass--light p-5 md:p-7">
+            <p className="text-[0.77rem] md:text-[0.77rem] text-foreground/70 leading-relaxed">{t.invest.disclaimer}</p>
           </div>
         </div>
       </section>
@@ -295,9 +275,7 @@ function Index() {
       <section id="kelly" className="py-16 md:py-24 bg-sand">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 grid md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-5">
-            <div className="aspect-[4/5] overflow-hidden bg-sand-dark">
-              <img src={kellyImg} alt="Kelly Belem" className="w-full h-full object-cover" loading="lazy" decoding="async" />
-            </div>
+            <KellyPhotoCarousel images={[kellyImg, kellyAward1, kellyAward2]} />
           </div>
           <div className="md:col-span-7 md:pl-8">
             <p className="eyebrow"><span className="rule" />{t.kelly.eyebrow}</p>
@@ -446,8 +424,30 @@ function ReviewsCarousel() {
   }, [paused, items.length]);
 
   return (
-    <section className="py-24 md:py-32 bg-sand-light">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-12">
+    <section className="relative py-24 md:py-32 bg-sand-light overflow-hidden isolate">
+      {/* Background portrait — right to left fade on desktop, subtle on mobile */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10"
+        style={{
+          backgroundImage: `url(${kellyTestimonialsBg})`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "left center",
+          backgroundSize: "auto 110%",
+          opacity: 0.32,
+          maskImage: "linear-gradient(to right, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0) 80%)",
+          WebkitMaskImage: "linear-gradient(to right, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0) 80%)",
+        }}
+      />
+      {/* Soft sand wash to keep contrast harmonious */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10"
+        style={{
+          background: "linear-gradient(to left, var(--sand-light) 0%, color-mix(in oklab, var(--sand-light) 85%, transparent) 55%, transparent 100%)",
+        }}
+      />
+      <div className="relative max-w-[1200px] mx-auto px-6 md:px-12">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <p className="eyebrow">{t.reviews.eyebrow}</p>
           <h2 className="mt-6 text-4xl md:text-5xl">
@@ -541,10 +541,12 @@ function CottageCarousel({ images, alt }: { images: string[]; alt: string }) {
   const [paused, setPaused] = useState(false);
 
   useEffect(() => {
-    if (paused) return;
+    if (paused || images.length <= 1) return;
     const id = setInterval(() => setIdx(i => (i + 1) % images.length), 4500);
     return () => clearInterval(id);
   }, [paused, images.length]);
+
+  const multi = images.length > 1;
 
   return (
     <div
@@ -563,16 +565,58 @@ function CottageCarousel({ images, alt }: { images: string[]; alt: string }) {
           style={{ opacity: i === idx ? 1 : 0 }}
         />
       ))}
-      <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-1.5">
-        {images.map((_, i) => (
+      {multi && (
+        <>
           <button
-            key={i}
-            aria-label={`Go to image ${i + 1}`}
-            onClick={() => setIdx(i)}
-            className={`h-1 rounded-full transition-all ${i === idx ? "w-6 bg-sand-light" : "w-1 bg-sand-light/50"}`}
-          />
-        ))}
-      </div>
+            type="button"
+            aria-label="Previous image"
+            onClick={() => setIdx((i) => (i - 1 + images.length) % images.length)}
+            className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-navy/40 hover:bg-navy/70 text-sand-light backdrop-blur-sm transition opacity-80 hover:opacity-100"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6" /></svg>
+          </button>
+          <button
+            type="button"
+            aria-label="Next image"
+            onClick={() => setIdx((i) => (i + 1) % images.length)}
+            className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-navy/40 hover:bg-navy/70 text-sand-light backdrop-blur-sm transition opacity-80 hover:opacity-100"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 6l6 6-6 6" /></svg>
+          </button>
+          <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-1.5">
+            {images.map((_, i) => (
+              <button
+                key={i}
+                aria-label={`Go to image ${i + 1}`}
+                onClick={() => setIdx(i)}
+                className={`h-1 rounded-full transition-all ${i === idx ? "w-6 bg-sand-light" : "w-1 bg-sand-light/50"}`}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
+function KellyPhotoCarousel({ images }: { images: string[] }) {
+  const [idx, setIdx] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setIdx((i) => (i + 1) % images.length), 1500);
+    return () => clearInterval(id);
+  }, [images.length]);
+  return (
+    <div className="relative aspect-[4/5] overflow-hidden bg-sand-dark">
+      {images.map((src, i) => (
+        <img
+          key={i}
+          src={src}
+          alt="Kelly Belem"
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${i === idx ? "opacity-100" : "opacity-0"}`}
+          loading="lazy"
+          decoding="async"
+        />
+      ))}
     </div>
   );
 }
