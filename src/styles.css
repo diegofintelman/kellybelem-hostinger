@@ -1,0 +1,110 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sand: var(--sand);
+  --color-sand-light: var(--sand-light);
+  --color-sand-dark: var(--sand-dark);
+  --color-terracotta: var(--terracotta);
+  --color-terracotta-dark: var(--terracotta-dark);
+  --color-navy: var(--navy);
+  --color-gold: var(--gold);
+  --color-ink: var(--ink);
+
+  --font-display: "Playfair Display", serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.25rem;
+
+  /* Editorial luxury palette — sand, terracotta, navy, deep gold */
+  --sand-light: oklch(0.97 0.012 80);
+  --sand: oklch(0.93 0.02 78);
+  --sand-dark: oklch(0.84 0.035 75);
+  --terracotta: oklch(0.58 0.13 40);
+  --terracotta-dark: oklch(0.48 0.12 38);
+  --navy: oklch(0.22 0.035 250);
+  --gold: oklch(0.74 0.11 80);
+  --ink: oklch(0.18 0.015 60);
+
+  --background: var(--sand-light);
+  --foreground: var(--ink);
+  --card: oklch(0.99 0.005 80);
+  --card-foreground: var(--ink);
+  --popover: var(--card);
+  --popover-foreground: var(--ink);
+  --primary: var(--terracotta);
+  --primary-foreground: oklch(0.98 0.01 80);
+  --secondary: var(--sand);
+  --secondary-foreground: var(--ink);
+  --muted: var(--sand);
+  --muted-foreground: oklch(0.45 0.02 60);
+  --accent: var(--terracotta);
+  --accent-foreground: oklch(0.98 0.01 80);
+  --destructive: oklch(0.55 0.2 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.86 0.025 75);
+  --input: oklch(0.86 0.025 75);
+  --ring: var(--terracotta);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "kern";
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; letter-spacing: -0.01em; }
+  .font-italic-serif { font-family: var(--font-serif); font-style: italic; font-weight: 400; }
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--color-terracotta);
+    font-weight: 500;
+  }
+  .rule {
+    display: inline-block;
+    width: 2.5rem;
+    height: 1px;
+    background: currentColor;
+    vertical-align: middle;
+    margin-right: 0.75rem;
+    opacity: 0.6;
+  }
+}
