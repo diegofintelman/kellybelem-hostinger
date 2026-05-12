@@ -4,28 +4,27 @@ const FLAGS: { code: Lang; label: string; svg: string }[] = [
   {
     code: "en",
     label: "EN",
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30">
-      <clipPath id="a"><path d="M0 0v30h60V0z"/></clipPath>
-      <clipPath id="b"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath>
-      <g clip-path="url(#a)">
-        <path d="M0 0v30h60V0z" fill="#012169"/>
-        <path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/>
-        <path d="M0 0l60 30m0-30L0 30" clip-path="url(#b)" stroke="#C8102E" stroke-width="4"/>
-        <path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/>
-        <path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/>
-      </g>
+    // USA flag
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 100">
+      <rect width="190" height="100" fill="#B22234"/>
+      <rect y="7.7" width="190" height="7.7" fill="#fff"/>
+      <rect y="23.1" width="190" height="7.7" fill="#fff"/>
+      <rect y="38.5" width="190" height="7.7" fill="#fff"/>
+      <rect y="53.8" width="190" height="7.7" fill="#fff"/>
+      <rect y="69.2" width="190" height="7.7" fill="#fff"/>
+      <rect y="84.6" width="190" height="7.7" fill="#fff"/>
+      <rect width="76" height="53.8" fill="#3C3B6E"/>
     </svg>`,
   },
   {
     code: "pt",
     label: "PT",
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
-      <rect width="900" height="600" fill="#006600"/>
-      <rect width="360" height="600" fill="#FF0000"/>
-      <circle cx="360" cy="300" r="120" fill="#FFD700"/>
-      <circle cx="360" cy="300" r="105" fill="#003399"/>
-      <circle cx="360" cy="300" r="70" fill="#fff"/>
-      <circle cx="360" cy="300" r="55" fill="#003399"/>
+    // Brazil flag
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 504">
+      <rect width="720" height="504" fill="#009c3b"/>
+      <polygon points="360,28 692,252 360,476 28,252" fill="#ffdf00"/>
+      <circle cx="360" cy="252" r="108" fill="#002776"/>
+      <path d="M252,222 a108,108 0 0,1 216,0" fill="none" stroke="#fff" stroke-width="18"/>
     </svg>`,
   },
   {
