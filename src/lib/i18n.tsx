@@ -110,7 +110,7 @@ export const EN = {
     fields: { name: "Full name", email: "E-mail", phone: "Phone (with country code)" },
     submit: "Speak with Kelly Belem",
     whatsapp: "or open directly on WhatsApp →",
-    waMsg: "Olá, vim do site e gostaria de negociar The Coral Rock Village.",
+    waMsg: "Hello, I'm coming from the website and I'd like to talk about The Coral Rock Village.",
   },
   footer: { rights: "© 2026 · 1301 Milan Avenue · Coral Gables, FL" },
 };
@@ -324,7 +324,7 @@ export const ES: Dict = {
     fields: { name: "Nombre completo", email: "E-mail", phone: "Teléfono (con código de país)" },
     submit: "Hablar con Kelly Belem",
     whatsapp: "o abra directamente en WhatsApp →",
-    waMsg: "Olá, vim do site e gostaria de negociar The Coral Rock Village.",
+    waMsg: "Hola, vengo de la web y me gustaría negociar The Coral Rock Village.",
   },
   footer: { rights: "© 2026 · 1301 Milan Avenue · Coral Gables, FL" },
 };
