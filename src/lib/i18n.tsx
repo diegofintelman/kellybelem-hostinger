@@ -18,7 +18,7 @@ export const EN = {
   },
   hero: {
     location: "Coral Gables, Florida",
-    price: "US$ 3,500,000",
+    price: "US$ 3,200,000",
     h1a: "Five independent Cottages",
     h1b: "in a 13,140 sqft lot.",
     h1c: "First time on the market in two decades.",
@@ -97,7 +97,7 @@ export const EN = {
     eyebrow: "§ 08 · Speak with Kelly",
     title: "The Coral Rock Village",
     address: "1301 Milan Avenue · Coral Gables",
-    price: "US$ 3,500,000",
+    price: "US$ 3,200,000",
     included: "What's included",
     bullets: [
       "Four Cottages — 677 sq.ft. each, in oolitic coral stone",
@@ -125,7 +125,7 @@ export const PT: Dict = {
   },
   hero: {
     location: "Coral Gables, Flórida",
-    price: "US$ 3.500.000",
+    price: "US$ 3.200.000",
     h1a: "Cinco Cottages independentes",
     h1b: "em um lote de 13.140 sqft.",
     h1c: "Primeira vez no mercado em duas décadas.",
@@ -204,7 +204,7 @@ export const PT: Dict = {
     eyebrow: "§ 08 · Conversar com a Kelly",
     title: "The Coral Rock Village",
     address: "1301 Milan Avenue · Coral Gables",
-    price: "US$ 3.500.000",
+    price: "US$ 3.200.000",
     included: "O que inclui",
     bullets: [
       "Quatro Cottages — 677 sq.ft. cada, em pedra coral oolítica",
@@ -232,7 +232,7 @@ export const ES: Dict = {
   },
   hero: {
     location: "Coral Gables, Florida",
-    price: "US$ 3.500.000",
+    price: "US$ 3.200.000",
     h1a: "Cinco Cottages independientes",
     h1b: "en un lote de 13.140 sqft.",
     h1c: "Por primera vez en el mercado en dos décadas.",
@@ -311,7 +311,7 @@ export const ES: Dict = {
     eyebrow: "§ 08 · Hablar con Kelly",
     title: "The Coral Rock Village",
     address: "1301 Milan Avenue · Coral Gables",
-    price: "US$ 3.500.000",
+    price: "US$ 3.200.000",
     included: "Qué incluye",
     bullets: [
       "Cuatro Cottages — 677 sq.ft. cada uno, en piedra coral oolítica",

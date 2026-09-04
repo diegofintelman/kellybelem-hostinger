@@ -47,7 +47,7 @@ import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "The Coral Rock Village — 1301 Milan Ave, Coral Gables · US$ 3,500,000" },
+      { title: "The Coral Rock Village · 1301 Milan Ave, Coral Gables · US$ 3,200,000" },
       { name: "description", content: "A historic 1929 estate in Coral Gables. Five oolitic coral stone cottages on a full city block. Local Historic Landmark. Represented by Kelly Belem · Keller Williams." },
       { property: "og:title", content: "The Coral Rock Village · Coral Gables" },
       { property: "og:description", content: "An entire block. Five cottages. First time on the market in two decades." },
